@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\Loan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\SAWE PETER\\.android\\build-cache\\563511ffa882dadbc3290bcd2ac4d42415072464\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\Loan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\SAWE PETER\\.android\\build-cache\\563511ffa882dadbc3290bcd2ac4d42415072464\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\Loan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\SAWE PETER\\.android\\build-cache\\563511ffa882dadbc3290bcd2ac4d42415072464\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\Loan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\SAWE PETER\\.android\\build-cache\\563511ffa882dadbc3290bcd2ac4d42415072464\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\Loan\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
+        "source": "C:\\Users\\SAWE PETER\\.android\\build-cache\\f079c24d904f0b27a44b3bc4bc528079787b3a6c\\output\\res\\layout-v21\\place_autocomplete_fragment.xml"
+    }
+]
