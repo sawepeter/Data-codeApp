@@ -4,7 +4,10 @@ import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -56,9 +59,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //image loading
                 Intent sawe = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(sawe, RESULT_LOAD_IMAGE);
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data){
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+            Cursor pita = getContentResolver().query(selectedImage,filePathColumn,null,null,null);
+            pita.moveToFirst();
+            int columnIndex = pita.getColumnIndex(filePathColumn[0]);
+            String picturepath = pita.getString(columnIndex);
+            pita.close();
+
+            Bitmap bitmap = BitmapFactory.decodeFile(picturepath);
+            codeimage.setImageBitmap(bitmap);
+
+            //load data
+            processData(bitmap);
+        }
     }
 
     @Override
