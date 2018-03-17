@@ -2,17 +2,22 @@ package com.sawepeter.loan;
 
 import android.*;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
@@ -49,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //image loading
+                Intent sawe = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
             }
         });
@@ -60,8 +67,18 @@ public class MainActivity extends AppCompatActivity {
             case MY_PERMISSION_STORAGE: {
                 if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
             }
         }
+    }
+    //barcode thing now
+    private void processData(Bitmap mybitmap){
+        Frame window = new Frame.Builder().setBitmap(mybitmap).build();
+        SparseArray<Barcode> barcodes = detector.detect(window);
+
+        Barcode thiscode = barcodes.valueAt(0);
+        barcode.setText(thiscode.rawValue);
     }
 }
